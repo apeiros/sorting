@@ -78,7 +78,7 @@
   
   
     <dt class="r1">Included in:</dt>
-    <dd class="r1"><span class='object_link'><a href="../Kernel.html" title="Kernel (module)">Kernel</a></span>, <span class='object_link'><a href="../Sorting.html" title="Sorting (module)">Sorting</a></span></dd>
+    <dd class="r1"><span class='object_link'><a href="../Sorting.html" title="Sorting (module)">Sorting</a></span></dd>
     
   
   
@@ -88,7 +88,18 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>This module provides convenience methods to create Sorting::Ascending and
+Sorting::Descending instances.</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -120,7 +131,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>Convenience method to create a Sorting::Ascending instance.</p>
+</div></span>
   
 </li>
 
@@ -142,7 +154,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>Convenience method to create a Sorting::Descending instance.</p>
+</div></span>
   
 </li>
 
@@ -165,18 +178,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Convenience method to create a Sorting::Ascending instance.
+Works exactly the same as <span class='object_link'><a href="Ascending.html#initialize-instance_method" title="Sorting::Ascending#initialize (method)">Ascending#initialize</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-12
-13
-14</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
   <span class='const'>Sorting</span><span class='op'>::</span><span class='const'>Ascending</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
@@ -195,18 +219,29 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Convenience method to create a Sorting::Descending instance.
+Works exactly the same as <span class='object_link'><a href="Ascending.html#initialize-instance_method" title="Sorting::Ascending#initialize (method)">Descending#initialize</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-16
-17
-18</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_desc'>desc</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
   <span class='const'>Sorting</span><span class='op'>::</span><span class='const'>Descending</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
@@ -221,7 +256,7 @@
 </div>
 
     <div id="footer">
-  Generated on Fri Feb 22 19:32:24 2013 by
+  Generated on Fri Feb 22 21:46:32 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.4.1 (ruby-1.9.3).
 </div>

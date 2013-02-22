@@ -73,21 +73,17 @@
   
   
     
-      <dt class="r1">Extended by:</dt>
-      <dd class="r1">Comparable</dd>
-      
-    
   
     
-      <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Helpers</a></span></dd>
+      <dt class="r1">Includes:</dt>
+      <dd class="r1"><span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Helpers</a></span></dd>
       
     
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/sorting.rb<span class="defines">,<br />
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/sorting.rb<span class="defines">,<br />
   lib/sorting/bigger.rb,<br /> lib/sorting/version.rb,<br /> lib/sorting/smaller.rb,<br /> lib/sorting/helpers.rb,<br /> lib/sorting/ascending.rb,<br /> lib/sorting/descending.rb</span>
 </dd>
   
@@ -104,12 +100,59 @@ Helpful functionality for sorting and comparing.</p>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>Convenient</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sorting/convenience</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_people'>people</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_person'>person</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_age'>age</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>Or without patching Kernel</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sorting</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_people'>people</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_person'>person</span><span class='op'>|</span>
+  <span class='lbracket'>[</span><span class='const'>Sorting</span><span class='period'>.</span><span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Sorting</span><span class='period'>.</span><span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Sorting</span><span class='period'>.</span><span class='id identifier rubyid_desc'>desc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_age'>age</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>Care about nil values in your data</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sorting/convenience</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_people'>people</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_person'>person</span><span class='op'>|</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span><span class='comma'>,</span> <span class='symbol'>:nils_first</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_person'>person</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span><span class='comma'>,</span> <span class='symbol'>:nils_last</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>Only care about nil values in your data</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span><span class='int'>3</span><span class='comma'>,</span><span class='kw'>nil</span><span class='comma'>,</span><span class='int'>9</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>||</span> <span class='const'>Sorting</span><span class='op'>::</span><span class='const'>Bigger</span> <span class='rbrace'>}</span> <span class='comment'># Sorting::Smaller is available too</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>Care about expensive comparison values which may not always be needed</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='comment'># assume item.expensive_value takes a lot of time to compute, but since it's the second value,
+</span><span class='comment'># it might only be needed in a small number of cases.
+</span><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sorting/convenience</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_cheap_value'>cheap_value</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='symbol'>:nils_last</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_expensive_value'>expensive_value</span> <span class='rbrace'>}</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
 
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Helpers</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Sorting/Bigger.html" title="Sorting::Bigger (module)">Bigger</a></span>, <span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Helpers</a></span>, <span class='object_link'><a href="Sorting/Smaller.html" title="Sorting::Smaller (module)">Smaller</a></span>
     
   
     
@@ -122,12 +165,10 @@ Helpful functionality for sorting and comparing.</p>
   
     <dl class="constants">
       
-        <dt id="Bigger-constant" class="">Bigger =
+        <dt id="Version-constant" class="">Version =
           <div class="docstring">
   <div class="discussion">
-    <p>The following two objects can be used as default values in sorting.
-Example:
-  person.age || Sorting::Bigger</p>
+    <p>The version of the sorting gem.</p>
 
 
   </div>
@@ -136,30 +177,8 @@ Example:
   
 
 </div>
-        </dt>
-        <dd><pre class="code"><span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></pre></dd>
-      
-        <dt id="Version-constant" class="">Version =
-          
         </dt>
         <dd><pre class="code"><span class='const'>Gem</span><span class='op'>::</span><span class='const'>Version</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.0.1</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre></dd>
-      
-        <dt id="Smaller-constant" class="">Smaller =
-          <div class="docstring">
-  <div class="discussion">
-    <p>The following two objects can be used as default values in sorting.
-Example:
-  person.age || Sorting::Smaller</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></pre></dd>
       
     </dl>
   
@@ -177,7 +196,6 @@ Example:
   
   
   
-  
   <h2>Method Summary</h2>
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Helpers</a></span></h3>
@@ -187,7 +205,7 @@ Example:
 </div>
 
     <div id="footer">
-  Generated on Fri Feb 22 19:32:24 2013 by
+  Generated on Fri Feb 22 21:46:32 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.4.1 (ruby-1.9.3).
 </div>
