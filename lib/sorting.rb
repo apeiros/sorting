@@ -42,6 +42,6 @@ require 'sorting/version'
 #     }
 #
 module Sorting
-  include Helpers
-  module_function *Sorting::Helpers.public_instance_methods
+  class_eval(&Sorting::Helpers::MethodDefinitions)
+  module_function *Sorting::Helpers.private_instance_methods(false)
 end
