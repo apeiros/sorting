@@ -17,7 +17,16 @@ Usage
 
 Sort a list of Person objects
 
+    # Convenient
+    require 'sorting/convenience'
     people.sort_by { |person| [asc(person.first_name), asc(person.last_name), desc(person.age)] }
+
+    # Or without patching Kernel
+    require 'sorting'
+    people.sort_by { |person|
+      [Sorting.asc(person.first_name), Sorting.asc(person.last_name), Sorting.desc(person.age)]
+    }
+
 
 Take a look at {file:documentation/examples.rb} for more examples.
 
