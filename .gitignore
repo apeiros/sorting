@@ -1,3 +1,4 @@
-/.yardoc
+/coverage/
+/.yardoc/
 /*.gem
 /pkg/
