@@ -1,1 +1,1 @@
--m markdown - LICENSE.txt documentation/examples.rb
+--no-private --list-undoc -m markdown - LICENSE.txt documentation/examples.rb
