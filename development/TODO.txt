@@ -1,0 +1,12 @@
+* Get Sorting::Helpers#asc and #desc properly documented. Same for Sorting and Kernel.
+  The code below did not work, but might help in a future attempt.
+
+    # Convenience method to create a Sorting::Ascending instance.
+    # Works exactly the same as {Sorting::Ascending#initialize}
+    # @!parse def asc(*args, &lazy); end; module_function :asc
+
+    # Convenience method to create a Sorting::Ascending instance.
+    # Works exactly the same as {Sorting::Ascending#initialize}
+    # @!parse def desc(*args, &lazy); end; module_function :desc
+
+* More examples in the documentation
