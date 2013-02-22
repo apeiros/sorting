@@ -86,7 +86,7 @@ module Sorting
 
     # Whether nils are always considered bigger.
     def nils_last?
-      @nils == :nils_last
+      @treat_nils == :nils_last
     end
 
     # @return [Comparable, #<=>, nil]
