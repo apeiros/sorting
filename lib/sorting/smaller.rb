@@ -49,6 +49,13 @@ module Sorting
     end
 
     # @private
+    # Enables comparisons with arrays
+    #
+    def self.to_ary
+      [self]
+    end
+
+    # @private
     # @see Object#inspect
     #
     def self.inspect

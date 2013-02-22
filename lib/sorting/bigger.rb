@@ -39,6 +39,13 @@ module Sorting
     end
 
     # @private
+    # Enables comparisons with arrays
+    #
+    def self.to_ary
+      [self]
+    end
+
+    # @private
     # @todo
     #   (SR) Figure out why this ended up here. I (SR) think it was due to
     #   some comparison failing without it, but I don't remember which.
