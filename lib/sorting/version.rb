@@ -7,5 +7,7 @@ rescue LoadError
 end
 
 module Sorting
+
+  # The version of the sorting gem.
   Version = Gem::Version.new("0.0.1")
 end
