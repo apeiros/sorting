@@ -69,8 +69,8 @@ module Sorting
       @value      = lazy || args.first
       @treat_nils = args[lazy ? 0 : 1]
 
-      unless NilsValues.include?(@nils)
-        raise ArgumentError, "Invalid value for nils, expected :nils_first or :nils_last, got #{@nils.inspect}"
+      unless NilsValues.include?(@treat_nils)
+        raise ArgumentError, "Invalid value for nils, expected :nils_first or :nils_last, got #{@treat_nils.inspect}"
       end
       if lazy
         raise ArgumentError, "wrong number of arguments (#{args.size} for 0..1" unless args.size.between?(0, 1)
