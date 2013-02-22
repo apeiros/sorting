@@ -81,7 +81,7 @@ module Sorting
 
     # Whether nils are always considered smaller.
     def nils_first?
-      @nils == :nils_first
+      @treat_nils == :nils_first
     end
 
     # Whether nils are always considered bigger.
