@@ -43,6 +43,8 @@ module Sorting
     #   (SR) Figure out why this ended up here. I (SR) think it was due to
     #   some comparison failing without it, but I don't remember which.
     #   The specific case should be documented.
+    #   It is not due to "somestring" <=> Sorting::Smaller, that inverts
+    #   the expression to Sorting::Smaller <=> "somestring"
     #
     def self.to_str
       self
