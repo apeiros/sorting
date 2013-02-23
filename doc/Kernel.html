@@ -75,21 +75,35 @@
     
   
     
-      <dt class="r1">Includes:</dt>
-      <dd class="r1"><span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Sorting::Helpers</a></span></dd>
-      
-    
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/sorting/convenience.rb</dd>
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/sorting/convenience.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>you have to require &#39;sorting/convenience&#39; to load this</p>
+</div>
+  </div>
+
+<p>The &#39;sorting/convenience&#39; file patches the Kernel module and adds global
+<code>asc()</code> and <code>desc()</code> methods, which work like <span class='object_link'><a href="Sorting/Helpers.html#asc-class_method" title="Sorting::Helpers.asc (method)">Sorting::Helpers.asc</a></span> and
+<span class='object_link'><a href="Sorting/Helpers.html#desc-class_method" title="Sorting::Helpers.desc (method)">Sorting::Helpers.desc</a></span></p>
 
 
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -97,21 +111,172 @@
 
 
   
-  
-  
-  
-  
-  
-  <h2>Method Summary</h2>
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="Sorting/Helpers.html" title="Sorting::Helpers (module)">Sorting::Helpers</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Sorting/Helpers.html#asc-instance_method" title="Sorting::Helpers#asc (method)">#asc</a></span>, <span class='object_link'><a href="Sorting/Helpers.html#desc-instance_method" title="Sorting::Helpers#desc (method)">#desc</a></span></p>
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asc-class_method" title="asc (class method)">+ (Object) <strong>asc</strong>(*args, &amp;lazy) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#desc-class_method" title="desc (class method)">+ (Object) <strong>desc</strong>(*args, &amp;lazy) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="asc-class_method">
+  
+    + (<tt>Object</tt>) <strong>asc</strong>(*args, &amp;lazy) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>This method is a module function, and as such also available as a
+private instance method.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Sorting/Helpers.html#asc-class_method" title="Sorting::Helpers.asc (method)">Sorting::Helpers.asc</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sorting/convenience.rb', line 24</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="desc-class_method">
+  
+    + (<tt>Object</tt>) <strong>desc</strong>(*args, &amp;lazy) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>This method is a module function, and as such also available as a
+private instance method.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Sorting/Helpers.html#desc-class_method" title="Sorting::Helpers.desc (method)">Sorting::Helpers.desc</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sorting/convenience.rb', line 32</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
 
     <div id="footer">
-  Generated on Fri Feb 22 21:34:46 2013 by
+  Generated on Sat Feb 23 14:24:55 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.4.1 (ruby-1.9.3).
 </div>

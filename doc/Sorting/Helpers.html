@@ -86,8 +86,18 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>This module provides convenience methods to create Sorting::Ascending and
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>require &#39;sorting&#39; loads this module</p>
+</div>
+  </div>
+
+<p>This module provides convenience methods to create Sorting::Ascending and
 Sorting::Descending instances.</p>
+
+<p>Important: see <span class='object_link'><a href="#append_to-class_method" title="Sorting::Helpers.append_to (method)">Helpers.append_to</a></span> for how to properly use this
+module with other modules</p>
 
 
   </div>
@@ -104,9 +114,7 @@ Sorting::Descending instances.</p>
           <div class="docstring">
   <div class="discussion">
     <p>The proc with the method definitions of asc and desc.
-They are in a proc so the proc can be class_eval&#39;ed in Sorting and Kernel
-to avoid an issue with methods of modules which are included in another
-module not being properly shared</p>
+See <span class='object_link'><a href="#append_to-class_method" title="Sorting::Helpers.append_to (method)">append_to</a></span> for an explanation.</p>
 
 
   </div>
@@ -123,14 +131,14 @@ module not being properly shared</p>
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_asc'>asc</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
     <span class='const'>Sorting</span><span class='op'>::</span><span class='const'>Ascending</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_private'>private</span> <span class='symbol'>:asc</span>
+  <span class='id identifier rubyid_module_function'>module_function</span> <span class='symbol'>:asc</span>
 
   <span class='comment'># Convenience method to create a Sorting::Descending instance.
-</span>  <span class='comment'># Works exactly the same as {Sorting::Ascending#initialize Descending#initialize}
+</span>  <span class='comment'># Works exactly the same as {Sorting::Descending#initialize Ascending#initialize}
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_desc'>desc</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
     <span class='const'>Sorting</span><span class='op'>::</span><span class='const'>Descending</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_private'>private</span> <span class='symbol'>:desc</span>
+  <span class='id identifier rubyid_module_function'>module_function</span> <span class='symbol'>:desc</span>
 <span class='rbrace'>}</span></pre></dd>
       
     </dl>
@@ -142,12 +150,260 @@ module not being properly shared</p>
 
 
 
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#append_to-class_method" title="append_to (class method)">+ (Object) <strong>append_to</strong>(mod) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Adds the Sorting::Helpers methods &#39;asc&#39; and &#39;desc&#39; to the given module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asc-class_method" title="asc (class method)">+ (Object) <strong>asc</strong>(*args, &amp;lazy) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Convenience method to create a Sorting::Ascending instance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#desc-class_method" title="desc (class method)">+ (Object) <strong>desc</strong>(*args, &amp;lazy) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Convenience method to create a Sorting::Descending instance.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="append_to-class_method">
+  
+    + (<tt>Object</tt>) <strong>append_to</strong>(mod) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>The methods are stored in the <span class='object_link'><a href="#MethodDefinitions-constant" title="Sorting::Helpers::MethodDefinitions (constant)">MethodDefinitions</a></span>
+proc. That proc is class_eval&#39;ed in in the module given by the <code>mod</code>
+parameter.
+It is done that way to avoid an issue with methods of modules which are
+included in another module not being properly shared</p>
+</div>
+  </div>
+
+<p>Adds the Sorting::Helpers methods &#39;asc&#39; and &#39;desc&#39; to the given module.
+This method class_eval because modules included into modules don&#39;t
+properly share methods</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>mod</span>
+      
+      
+        <span class='type'>(<tt>Module</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The class or module on which to append the Sorting::Helpers methods</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_append_to'>append_to</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_mod'>mod</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='const'>MethodDefinitions</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="asc-class_method">
+  
+    + (<tt>Object</tt>) <strong>asc</strong>(*args, &amp;lazy) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>This method is a module function, and as such also available as a
+private instance method.</p>
+</div>
+  </div>
+
+<p>Convenience method to create a Sorting::Ascending instance.
+Works exactly the same as <span class='object_link'><a href="Ascending.html#initialize-instance_method" title="Sorting::Ascending#initialize (method)">Ascending#initialize</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 62</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="desc-class_method">
+  
+    + (<tt>Object</tt>) <strong>desc</strong>(*args, &amp;lazy) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>This method is a module function, and as such also available as a
+private instance method.</p>
+</div>
+  </div>
+
+<p>Convenience method to create a Sorting::Descending instance.
+Works exactly the same as <span class='object_link'><a href="Ascending.html#initialize-instance_method" title="Sorting::Ascending#initialize (method)">Descending#initialize</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sorting/helpers.rb', line 71</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
 
     <div id="footer">
-  Generated on Fri Feb 22 23:05:08 2013 by
+  Generated on Sat Feb 23 14:24:55 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.4.1 (ruby-1.9.3).
 </div>

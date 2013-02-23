@@ -105,7 +105,14 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>This class is used to implement &#39;asc&#39; (ascending) sorting.
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>require &#39;sorting&#39; loads this class</p>
+</div>
+  </div>
+
+<p>This class is used to implement &#39;asc&#39; (ascending) sorting.
 You should not need to use this class directly.
 You can <code>require &#39;sorting/convenience&#39;</code> and then use Kernel#asc,
 or you can <code>require &#39;sorting&#39;</code> and then use Sorting#asc (which
@@ -122,7 +129,7 @@ is a module_function, and hence available as Sorting::asc)</p>
     
       <li><span class='object_link'><a href="Helpers.html" title="Sorting::Helpers (module)">Sorting::Helpers is a module which provides you with a convenient .asc forwarding method</a></span></li>
     
-      <li>Sorting#asc is the common way to create a Sorting::Ascending instance</li>
+      <li><span class='object_link'><a href="../Sorting.html#asc-class_method" title="Sorting.asc (method)">Sorting.asc is the common way to create a Sorting::Ascending instance, or if you required 'sorting/convenience', then plain asc via Kernel#asc</a></span></li>
     
       <li><span class='object_link'><a href="Descending.html" title="Sorting::Descending (class)">Sorting::Descending is the opposite of Sorting::Ascending</a></span></li>
     
@@ -477,10 +484,6 @@ Any object which implements &lt;=&gt; (or nil if you set treat_nils).</p>
       <pre class="lines">
 
 
-67
-68
-69
-70
 71
 72
 73
@@ -490,10 +493,14 @@ Any object which implements &lt;=&gt; (or nil if you set treat_nils).</p>
 77
 78
 79
-80</pre>
+80
+81
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_lazy'>lazy</span><span class='rparen'>)</span>
   <span class='ivar'>@memoized</span>   <span class='op'>=</span> <span class='id identifier rubyid_lazy'>lazy</span> <span class='op'>?</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='kw'>true</span>
@@ -553,12 +560,12 @@ Any object which implements &lt;=&gt; (or nil if you set treat_nils).</p>
       <pre class="lines">
 
 
-33
-34
-35</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_treat_nils'>treat_nils</span>
   <span class='ivar'>@treat_nils</span>
@@ -627,10 +634,6 @@ Returns nil when the value could not be compared to with <code>other</code>.</p>
       <pre class="lines">
 
 
-114
-115
-116
-117
 118
 119
 120
@@ -641,10 +644,14 @@ Returns nil when the value could not be compared to with <code>other</code>.</p>
 125
 126
 127
-128</pre>
+128
+129
+130
+131
+132</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 118</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_my_value'>my_value</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
@@ -704,12 +711,12 @@ Returns nil when the value could not be compared to with <code>other</code>.</p>
       <pre class="lines">
 
 
-83
-84
-85</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 87</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nils_first?'>nils_first?</span>
   <span class='ivar'>@treat_nils</span> <span class='op'>==</span> <span class='symbol'>:nils_first</span>
@@ -757,12 +764,12 @@ Returns nil when the value could not be compared to with <code>other</code>.</p>
       <pre class="lines">
 
 
-88
-89
-90</pre>
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nils_last?'>nils_last?</span>
   <span class='ivar'>@treat_nils</span> <span class='op'>==</span> <span class='symbol'>:nils_last</span>
@@ -818,17 +825,17 @@ called.</p>
       <pre class="lines">
 
 
-97
-98
-99
-100
 101
 102
 103
-104</pre>
+104
+105
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/sorting/ascending.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_value'>value</span>
   <span class='kw'>if</span> <span class='ivar'>@memoized</span>
@@ -848,7 +855,7 @@ called.</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Feb 22 23:05:08 2013 by
+  Generated on Sat Feb 23 14:24:55 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.4.1 (ruby-1.9.3).
 </div>
