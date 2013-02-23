@@ -14,11 +14,15 @@ module Sorting
   #   Sorting::Helpers is a module which provides you with a convenient .asc
   #   forwarding method
   #
-  # @see Sorting#asc
-  #   Sorting#asc is the common way to create a Sorting::Ascending instance
+  # @see Sorting.asc
+  #   Sorting.asc is the common way to create a Sorting::Ascending instance,
+  #   or if you required 'sorting/convenience', then plain asc via Kernel#asc
   #
   # @see Sorting::Descending
   #   Sorting::Descending is the opposite of Sorting::Ascending
+  #
+  # @note
+  #   require 'sorting' loads this class
   #
   class Ascending
 

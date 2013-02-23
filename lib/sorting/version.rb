@@ -9,5 +9,8 @@ end
 module Sorting
 
   # The version of the sorting gem.
+  # @note
+  #   require 'sorting' loads this module
+  #
   Version = Gem::Version.new("0.0.2")
 end

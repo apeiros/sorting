@@ -12,6 +12,9 @@ module Sorting
   #
   # @see Sorting::Bigger
   #
+  # @note
+  #   require 'sorting' loads this module
+  #
   module Smaller
     extend Comparable
 
