@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
 
   s.files                     =
     Dir['bin/**/*'] +
+    Dir['documentation/**/*'] +
     Dir['lib/**/*'] +
     Dir['rake/**/*'] +
     Dir['test/**/*'] +
@@ -26,10 +27,9 @@ Gem::Specification.new do |s|
       Rakefile
       README.markdown
     ]
-  s.require_paths             = %w[lib]
+
   if File.directory?('bin') then
-    executables = Dir.chdir('bin') { Dir.glob('**/*').select { |f| File.executable?(f) } }
-    s.executables = executables unless executables.empty?
+    s.executables = Dir.chdir('bin') { Dir.glob('**/*').select { |f| File.executable?(f) } }
   end
 
   s.required_ruby_version     = ">= 1.9.2"
