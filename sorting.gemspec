@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name                      = "sorting"
-  s.version                   = "0.0.1"
+  s.version                   = "0.0.2"
   s.authors                   = "Stefan Rusterholz"
   s.email                     = "stefan.rusterholz@gmail.com"
   s.homepage                  = "https://github.com/apeiros/sorting"
