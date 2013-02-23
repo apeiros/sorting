@@ -14,6 +14,9 @@ require 'sorting/version'
 # Sorting
 # Helpful functionality for sorting and comparing.
 #
+# Requiring 'sorting' loads all functionality this gem provides, except for the
+# patches on Kernel. For those you must `require 'sorting/convenience'`.
+#
 # @example Convenient
 #     require 'sorting/convenience'
 #     people.sort_by { |person| [asc(person.first_name), asc(person.last_name), desc(person.age)] }
@@ -42,6 +45,21 @@ require 'sorting/version'
 #     [5,3,nil,9].sort_by { |x| x || Sorting::Bigger } # Sorting::Smaller is available too
 #
 module Sorting
-  class_eval(&Sorting::Helpers::MethodDefinitions)
-  module_function *Sorting::Helpers.private_instance_methods(false)
+  Sorting::Helpers.append_to(self) # can't use include, see Sorting::Helpers.append_to
+
+  # @!method asc(*args, &lazy)
+  #   @!scope class
+  #   @see Sorting::Helpers.asc
+  #
+  #   @note
+  #     This method is a module function, and as such also available as a
+  #     private instance method.
+
+  # @!method desc(*args, &lazy)
+  #   @!scope class
+  #   @see Sorting::Helpers.desc
+  #
+  #   @note
+  #     This method is a module function, and as such also available as a
+  #     private instance method.
 end
