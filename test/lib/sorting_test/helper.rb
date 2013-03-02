@@ -6,9 +6,6 @@ require 'test/unit/assertions'
 require 'sorting_test/assertions'
 
 
-PROJECT_DIR = File.expand_path('../../../../', __FILE__)
-TEST_DIR    = File.join(PROJECT_DIR, 'test')
-
 module TestSuite
   attr_accessor :name
 end
